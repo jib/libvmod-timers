@@ -8,6 +8,7 @@ ifdef $(VARNISHSRC)
 else
 	SRC = $(top_srcdir)
 	DIR_PREFIX = lib/libvmod-timers/
+endif
 
 INCLUDES = -I$(SRC)/include -I$(SRC)
 
@@ -15,6 +16,7 @@ ifdef $(VMODDIR)
 	vmoddir = $(VMODDIR)
 else
 	vmoddir = $(pkglibdir)/vmods
+endif
 
 vmod_LTLIBRARIES = libvmod_timers.la
 
