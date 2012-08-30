@@ -3,19 +3,19 @@
 # within the varnish src dir itself, and $(top_srcdir) is the varnish source).
 #
 ifdef $(VARNISHSRC)
-	SRC = $(VARNISHSRC)
-	DIR_PREFIX = /
+SRC = $(VARNISHSRC)
+DIR_PREFIX = /
 else
-	SRC = $(top_srcdir)
-	DIR_PREFIX = lib/libvmod-timers/
+SRC = $(top_srcdir)
+DIR_PREFIX = lib/libvmod-timers/
 endif
 
 INCLUDES = -I$(SRC)/include -I$(SRC)
 
 ifdef $(VMODDIR)
-	vmoddir = $(VMODDIR)
+vmoddir = $(VMODDIR)
 else
-	vmoddir = $(pkglibdir)/vmods
+vmoddir = $(pkglibdir)/vmods
 endif
 
 vmod_LTLIBRARIES = libvmod_timers.la
