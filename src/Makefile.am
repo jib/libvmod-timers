@@ -2,7 +2,7 @@
 # this the same as the modules that come with varnish (i.e. we're building
 # within the varnish src dir itself, and $(top_srcdir) is the varnish source).
 #
-ifdef $(VARNISHSRC)
+if $(VARNISHSRC)
 SRC = $(VARNISHSRC)
 DIR_PREFIX = /
 else
@@ -12,7 +12,7 @@ endif
 
 INCLUDES = -I$(SRC)/include -I$(SRC)
 
-ifdef $(VMODDIR)
+if $(VMODDIR)
 vmoddir = $(VMODDIR)
 else
 vmoddir = $(pkglibdir)/vmods
