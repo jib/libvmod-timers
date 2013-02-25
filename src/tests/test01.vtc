@@ -26,7 +26,7 @@ server s1 {
 #    12 VCL_Log      c d req_delivery_time -1
 
 varnish v1 -vcl+backend {
-	import timers from "${vmod_topbuild}/src/.libs/libvmod_timers.so";
+    import timers from "${vmod_topbuild}/src/.libs/libvmod_timers.so";
 
     sub vcl_init {
         ### so there's something to see, since there's no actual backend
@@ -91,12 +91,12 @@ varnish v1 -vcl+backend {
 } -start
 
 client c1 {
-	txreq -url "/"
-	rxresp
+    txreq -url "/"
+    rxresp
 
     ### utility functions
-	expect resp.http.add        == 2
-	expect resp.http.subtract   == 2
+    expect resp.http.add        == 2
+    expect resp.http.subtract   == 2
 
     ### timestamps
     expect resp.http.req_start              == 1
