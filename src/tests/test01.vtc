@@ -35,14 +35,14 @@ varnish v1 -vcl+backend {
 
     ### XXX there isn't regex support to check the answers, so resort to
     ### setting flags in vcl deliver :(
-	sub vcl_deliver {
+    sub vcl_deliver {
 
         ######################
         ### utility functions
         ######################
 
         set resp.http.add       = timers.add( 1, 1 );
-	    set resp.http.subtract  = timers.subtract( 4, 2 );
+        set resp.http.subtract  = timers.subtract( 4, 2 );
 
         ######################
         ### Timestamps
@@ -86,7 +86,7 @@ varnish v1 -vcl+backend {
         if( timers.req_delivery_time() < 0 ) {
             set resp.http.req_delivery_time = 1;
         }
-	}
+    }
 
 } -start
 
