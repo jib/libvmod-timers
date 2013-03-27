@@ -169,7 +169,7 @@ req_response_time
 
 Prototype::
 
-                req_handle_time()
+                req_response_time()
 
 Return value
 	INT
